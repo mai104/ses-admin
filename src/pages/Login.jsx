@@ -13,7 +13,7 @@ const loginSchema = Yup.object().shape({
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
-  const navigate = useNavigate();  // استخدام useNavigate بدلاً من useRouter
+  const navigate = useNavigate();  
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -25,9 +25,9 @@ export default function Login() {
       setStatus(""); 
       try {
         console.log("Logging in...", values);
-        await new Promise((resolve) => setTimeout(resolve, 2000));  // محاكاة عملية الدخول
+        await new Promise((resolve) => setTimeout(resolve, 2000));  
 
-        navigate("/overview");  // استخدام navigate للتنقل إلى الصفحة المطلوبة
+        navigate("/overview");  
       } catch (error) {
         console.error("Login error:", error);
         setStatus("Login failed. Please try again.");
